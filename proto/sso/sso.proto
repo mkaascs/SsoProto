@@ -7,6 +7,10 @@ option go_package = "mkaascs.v1.sso;ssov1";
 service Auth {
     rpc Login (LoginRequest) returns (LoginResponse);
     rpc Register (RegisterRequest) returns (RegisterResponse);
+    rpc Refresh (RefreshRequest) returns (RefreshResponse);
+}
+
+service User {
     rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
 }
 
@@ -17,6 +21,16 @@ message LoginRequest {
 }
 
 message LoginResponse {
+    string access_token = 1;
+    string refresh_token = 2;
+}
+
+message RefreshRequest {
+    string refresh_token = 1;
+    string client_id = 2;
+}
+
+message RefreshResponse {
     string access_token = 1;
     string refresh_token = 2;
 }
