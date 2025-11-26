@@ -5,7 +5,8 @@ Protobuf-first authentication service for microservices architecture. Provides b
 **gRPC Service:**
 - `Auth.Login` - User authentication with JWT tokens
 - `Auth.Register` - New user registration
-- `Auth.IsAdmin` - Role-based access control
+- `Auth.Refresh` - Refresh tokens
+- `User.IsAdmin` - Role-based access control
 
 **Tech Stack:**
 - 🏗️ **Protocol Buffers** - API definition
